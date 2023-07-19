@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import laserSound from "./laser_sound.mp3";
+let audioUrl = require('./assets/laser_sound.mp3');
 
 interface LaserBeamProps {
   position: { x: number; y: number };
@@ -9,7 +9,7 @@ interface LaserBeamProps {
 const LaserBeam: React.FC<LaserBeamProps> = ({ position, isFiring }) => {
   useEffect(() => {
     const playLaserSound = () => {
-      const audio = new Audio(laserSound);
+      const audio = new Audio(audioUrl);
       audio.play();
     };
 
