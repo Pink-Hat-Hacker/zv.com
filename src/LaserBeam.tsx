@@ -1,37 +1,51 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 let audioUrl = require('./assets/laser_sound.mp3');
-
 interface LaserBeamProps {
-  position: { x: number; y: number };
-  isFiring: boolean;
+  x: number;
+  onLaserFired: () => void;
 }
 
-const LaserBeam: React.FC<LaserBeamProps> = ({ position, isFiring }) => {
+const LaserBeam: React.FC<LaserBeamProps> = ({ x, onLaserFired }) => {
+  const [y, setY] = useState(window.innerHeight);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setY((prevY) => prevY - 20);
+    }, 30);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    if (y < 0) {
+      setY(window.innerHeight);
+      onLaserFired();
+    }
+  }, [y, onLaserFired]);
+
   useEffect(() => {
     const playLaserSound = () => {
       const audio = new Audio(audioUrl);
       audio.play();
     };
 
-    if (isFiring) {
-      // Perform the laser firing action here
-      playLaserSound();
-    }
-  }, [isFiring]);
+    playLaserSound();
+  }, []);
 
   return (
     <div
       style={{
         position: "absolute",
-        top: position.y,
-        left: position.x,
+        top: y,
+        left: x,
         transform: "translateX(-50%)",
-        width: "2px",
-        height: "100%",
+        width: "5px",
+        height: "30px",
         backgroundColor: "red",
       }}
     />
   );
 };
-
 export default LaserBeam;
+
+

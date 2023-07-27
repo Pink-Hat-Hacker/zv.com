@@ -5,7 +5,8 @@ import LaserBeam from "./LaserBeam";
 const SpaceInvaderShip: React.FC = () => {
     const [position, setPosition] = useState({ x: 0, y: 0 });
     const [isSpacePressed, setIsSpacePressed] = useState(false);
-
+    const [laserFired, setLaserFired] = useState(false);
+    
     useEffect(() => {
         const handleKeyDown = (event: KeyboardEvent) => {
             if (event.key === "ArrowLeft") {
@@ -32,29 +33,19 @@ const SpaceInvaderShip: React.FC = () => {
             window.removeEventListener("keyup", handleKeyUp);
         };
     }, []);
-  
-
-    useEffect(() => {
-        const handleResize = () => {
-            setPosition((prevPosition) => ({ ...prevPosition, x: window.innerWidth / 2 }));
-        };
-
-        handleResize(); // Set initial position on component mount
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
     return (
-        <div
+        <div>
+          <img
+            src={shipImage}
+            alt="Space Invader Ship"
             style={{
-            position: "absolute",
-            bottom: "0",
-            left: `${position.x}px`,
-            transform: "translateX(-50%)",
-            }}
-        >
-            <img className="shipImg" src={shipImage} alt="Space Invader Ship" />
-            <LaserBeam position={{ x: position.x, y: position.y - 10 }} isFiring={isSpacePressed} />
+                position: "absolute",
+                bottom: "0",
+                left: `${position.x}px`,
+                transform: "translateX(-50%)",
+            }}/>
+          {isSpacePressed && !laserFired && <LaserBeam x={position.x} onLaserFired={() => setLaserFired(true)} />}
         </div>
     );
 };
