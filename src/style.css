@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: 'Space Mono', monospace;
+}
+.header {
+    text-align: center;
+    padding: 20px 0;
+    color: green;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.yoyo-image {
+    width: 30px;
+    height: 30px;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.aliens-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 50%; /* Adjust as needed */
+    left: 0;
+    right: 0;
+}
+
+#spaceship {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 87px;
+    height: 50px;
+    background-image: url('images/spaceship.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.alien {
+    display: inline-block;
+    text-align: center;
+    margin: 0 30px;
+    text-decoration: none; /* Remove underline */
+    color: green; /* Set link text color */
+}
+
+.alien-image {
+    width: 70px;
+    height: 50px;
+    background-image: url('images/alien.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-bottom: 5px; /* Add spacing between image and text */
+}
+
+.alien-link-text {
+    display: block;
+    font-size: 12px; /* Adjust as needed */
+}
+.laser {
+    position: absolute;
+    width: 5px;
+    height: 20px;
+    background-color: red;
+}
