@@ -6,13 +6,7 @@ body {
 }
 .header {
     text-align: center;
-    padding: 20px 0;
     color: green;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 24px;
 }
 
 .yoyo-image {
