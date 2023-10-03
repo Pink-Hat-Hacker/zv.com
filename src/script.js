@@ -11,7 +11,7 @@ document.addEventListener('keydown', (event) => {
     } else if (event.key === ' ') {
         const laser = document.createElement('div');
         laser.classList.add('laser');
-        laser.style.left = spaceshipPosition + 'px';
+        laser.style.left = spaceshipPosition + 50 + 'px';
         laser.style.bottom = '100px';
         document.body.appendChild(laser);
         lasers.push(laser);
