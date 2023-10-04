@@ -2,6 +2,7 @@ const spaceship = document.getElementById('spaceship');
 let lasers = [];
 
 let spaceshipPosition = 50;
+var audio = new Audio('audio/laser_sound.mp3');
 
 document.addEventListener('keydown', (event) => {
     if (event.key === 'ArrowLeft') {
@@ -9,6 +10,8 @@ document.addEventListener('keydown', (event) => {
     } else if (event.key === 'ArrowRight') {
         spaceshipPosition += 20;
     } else if (event.key === ' ') {
+        audio.play();
+
         const laser = document.createElement('div');
         laser.classList.add('laser');
 
@@ -19,11 +22,32 @@ document.addEventListener('keydown', (event) => {
         laser.style.bottom = '60px';
         document.body.appendChild(laser);
         lasers.push(laser);
-        console.log("left: " + laser.style.left + " \n bottom: " + laser.style.bottom);
+        
     }
 
     spaceship.style.left = spaceshipPosition + 'px';
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const modal = document.querySelector('.modal');
+    const closeModal = document.querySelector('.close-modal');
+
+    // Show the modal on page load
+    modal.style.display = 'block';
+
+    // Close the modal when clicking the close button
+    closeModal.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Close the modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
+
 
 
 function moveLasers() {
