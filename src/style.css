@@ -60,11 +60,12 @@ body {
     /* background-color: #000; Background color for the header */
 }
 
-.yoyo-image {
-    width: 30px;
-    height: 30px;
-    margin-left: 10px;
-    vertical-align: middle;
+.logo-image {
+    width: 745px;
+    height: 196px;
+    background-image: url('images/pph.png');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 
@@ -126,4 +127,91 @@ body {
     width: 5px;
     height: 20px;
     background-color: red;
+}
+
+/* Color Theme Toggle Styles */
+.theme-switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    background-color: #ccc;
+    border-radius: 34px;
+    user-select: none;
+}
+
+.theme-switch input {
+    display: none;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #37c200;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+/* Pink and White Theme */
+input:checked + .slider {
+    background-color: #EF11B1;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Pink and White Theme Styles */
+.pink-theme {
+    background-color: #fff;
+    color: #EF11B1;
+}
+
+.pink-theme .modal-content {
+    background-color: #fff;
+    color: #EF11B1;
+}
+
+.pink-theme .theme-switch {
+    background-color: #ccc;
+}
+
+.pink-theme .slider {
+    background-color: #37c200;
+}
+
+.pink-theme .slider:before {
+    background-color: #fff;
+}
+
+.pink-theme .alien-link-text {
+    color: #EF11B1;
+}
+
+.pink-theme #spaceship {
+    background-image: url('images/spaceship_pink.png'); /* Pink spaceship image */
+}
+.pink-theme .alien-image {
+    background-image: url('images/alien_pink.png'); /* Pink alien image */
+}
+.pink-theme .logo-image {
+    background-image: url('images/pph_pink.png'); /* Pink logo image */
 }

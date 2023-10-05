@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
-        <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico?">
         <link rel="stylesheet" href="style.css">
         <title>Space Invader Website</title>
     </head>
@@ -19,9 +19,16 @@
                 </div>
             </div>
 
+            <!-- Color Theme Toggle Switch -->
+            <label class="theme-switch" for="toggle">
+                <input type="checkbox" id="toggle">
+                <div class="slider"></div>
+            </label>
+
             <!-- Logo -->
             <div class="header">
-                <img src="images/pph.png" alt="Pink-Hat-Hacker in Space Invader Font">
+                <div class="logo-image"></div>
+                <!-- <img class="logo" src="images/pph.png" alt="Pink-Hat-Hacker in Space Invader Font"> -->
                 <!-- <img src="images/yoyo.png" alt="Yoyo Image" class="yoyo-image"> -->
             </div>
 

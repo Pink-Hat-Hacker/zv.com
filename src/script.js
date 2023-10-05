@@ -48,6 +48,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+    const themeSwitch = document.getElementById('toggle');
+    const container = document.querySelector('.container');
+
+    themeSwitch.addEventListener('change', function() {
+        if (themeSwitch.checked) {
+            container.classList.add('pink-theme');
+        } else {
+            container.classList.remove('pink-theme');
+        }
+    });
+});
 
 
 function moveLasers() {
