@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="images/favicon.ico?">
+        <link rel="stylesheet" href="style.css">
+        <title>Space Invader Website</title>
+    </head>
+    <body>
+        <div class="container">
+            <!-- Modal -->
+            <div class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <p>Get to know Pink Hat Hacker (aka Zoe Yoyo Valladares) by playing a game!</p>
+                    <p> Press your arrow keys <-  -> to move and SPACE to shoot :) </p>
+                </div>
+            </div>
+
+            <!-- Color Theme Toggle Switch -->
+            <label class="theme-switch" for="toggle">
+                <input type="checkbox" id="toggle">
+                <div class="slider"></div>
+            </label>
+
+            <!-- Logo -->
+            <div class="header">
+                <div class="logo-image"></div>
+                <!-- <img class="logo" src="images/pph.png" alt="Pink-Hat-Hacker in Space Invader Font"> -->
+                <!-- <img src="images/yoyo.png" alt="Yoyo Image" class="yoyo-image"> -->
+            </div>
+
+            <!-- Alien Links -->
+            <div class="aliens-row">
+                <a class="alien" href="https://zoevalladares.com">
+                    <div class="alien-image"></div>
+                    <span class="alien-link-text">Art</span>
+                </a>
+                <a class="alien" href="https://www.linkedin.com/in/zoe-yoyo-valladares/">
+                    <div class="alien-image"></div>
+                    <span class="alien-link-text">LinkedIn</span>
+                </a>
+                <a class="alien" href="https://github.com/Pink-Hat-Hacker">
+                    <div class="alien-image"></div>
+                    <span class="alien-link-text">GitHub</span>
+                </a>
+            </div>
+
+            <!-- Spaceship -->
+            <div class="spaceship-row">
+                <div id="spaceship"></div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
